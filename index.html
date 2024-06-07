@@ -166,13 +166,24 @@
 
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message"  rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+
+                        <!-- Replace with your Access Key -->
+                        <input type="hidden" name="access_key" value="5b9fb9bb-3a3a-4e3a-96c9-aecae1a38994">
+                    
+                        <!-- Form Inputs. Each input must have a name="" attribute -->
+                        <input type="text" name="name" placeholder="Your Name"  required>
+                        <input type="email" name="email" placeholder="Your Email"  required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    
+                        <!-- hCaptcha Spam Protection -->
+                        <div class="h-captcha" data-captcha="true"></div>
+                    
+                        <button type="submit" class="btn btn2">Submit Form</button>
+                    
                     </form>
-                    <span id="msg"></span>
+                    <!-- Required for hCaptcha -->
+                    <script src="https://web3forms.com/client/script.js" async defer></script>
                 </div>
 
             </div>
